@@ -52,6 +52,17 @@ body {
   display: block;
 }
 
+.span::after {
+  content: ' ';
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+  z-index: 1;
+  transform-origin: 100% 0;
+}
+
 .HeroContext p {
   width: 100%;
   max-width: 700px;
@@ -64,7 +75,6 @@ body {
   position: relative;
   text-align: center;
   width: 100%;
-  height: 100%;
 }
 
 .HeroImg img {
@@ -73,16 +83,10 @@ body {
   opacity: 0;
 }
 
-.HeroImg img:nth-child(1) {
-  position: relative;
-  z-index: -1;
-}
-
 .HeroImg img:nth-child(2) {
   position: absolute;
   bottom: -20px;
-  left: -30px;
-  z-index: 999;
+  right: 00px;
 }
 
 @media (min-width: 576px) {

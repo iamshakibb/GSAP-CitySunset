@@ -1,3 +1,6 @@
+gsap.registerPlugin(CSSRulePlugin);
+var rule = CSSRulePlugin.getRule('.span::after');
+
 gsap.from('.logo', {
   opacity: 0,
   duration: 1.5,
@@ -6,11 +9,13 @@ gsap.from('.logo', {
 
 gsap.from('.anime', {
   opacity: 0,
-  duration: 1.2,
+  duration: 1.5,
   y: 50,
   stagger: 0.6,
   delay: 1.1,
 });
+
+gsap.to(rule, { duration: 1.8, cssRule: { scaleY: 0, screenX: 0 } });
 
 gsap.to('.city', {
   opacity: 1,
