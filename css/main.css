@@ -45,7 +45,7 @@ body {
   width: 100%;
   font-size: 70px;
   margin-bottom: 25px;
-  line-height: 74px;
+  line-height: 86px;
   font-family: 'Dancing Script', cursive;
 }
 
@@ -89,7 +89,7 @@ body {
 .HeroImg img:nth-child(2) {
   position: absolute;
   bottom: -20px;
-  right: 00px;
+  right: 0px;
 }
 
 @media (min-width: 576px) {
