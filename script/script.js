@@ -1,32 +1,56 @@
 gsap.registerPlugin(CSSRulePlugin);
-var rule = CSSRulePlugin.getRule('.span::after');
+const rule = CSSRulePlugin.getRule('.span::after');
 
-gsap.from('.logo', {
-  opacity: 0,
+gsap.to('bodyContainer', {
+  css: { visibility: 'visiable' },
   duration: 1.5,
-  x: 50,
 });
 
-gsap.from('.anime', {
-  opacity: 0,
+const tl = gsap.timeline({ defaults: { duration: 1 } });
+
+tl.from('.logo', {
+  opacity: 1,
   duration: 1.5,
-  y: 50,
-  stagger: 0.6,
-  delay: 1.1,
-});
+  x: -50,
+})
+  .from(
+    '.anime',
+    {
+      opacity: 0,
+      duration: 1.5,
+      y: 50,
+      stagger: 0.6,
+    },
+    '-=1.8'
+  )
+  .to(rule, { duration: 1.8, cssRule: { scaleY: 0 } }, '-=1.8')
+  .to(
+    '.city',
+    {
+      opacity: 1,
+      duration: 1.2,
+      y: -25,
+    },
+    '-=1.2'
+  )
+  .to(
+    '.citySunset',
+    {
+      opacity: 1,
+      duration: 1,
+      x: 45,
+    },
+    '-=1.4'
+  );
 
-gsap.to(rule, { duration: 1.8, cssRule: { scaleY: 0, screenX: 0 } });
-
-gsap.to('.city', {
-  opacity: 1,
-  duration: 1.2,
-  y: -25,
-  delay: 1.5,
-});
-
-gsap.to('.citySunset', {
-  opacity: 1,
-  delay: 1.2,
-  duration: 1,
-  x: 45,
-});
+if (window.innerWidth <= 991) {
+  tl.to(
+    '.city',
+    {
+      opacity: 1,
+      duration: 1.2,
+      y: -25,
+    },
+    '-=2.2'
+  );
+}
