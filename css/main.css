@@ -146,11 +146,12 @@ body {
   .HeroContext p {
     margin-bottom: 15px;
     padding: 0 15px;
-    text-align: left;
+    text-align: center;
   }
 
   .logo {
     text-align: center;
+    margin-bottom: 40px;
   }
 }
 
