@@ -37,6 +37,7 @@ body {
 }
 
 .HeroContext {
+  grid-area: HeroContext;
   width: 100%;
 }
 
@@ -72,13 +73,15 @@ body {
 }
 
 .HeroImg {
+  grid-area: HeroImg;
   position: relative;
   text-align: center;
   width: 100%;
 }
 
 .HeroImg img {
-  width: 400px;
+  width: 100%;
+  max-width: 400px;
   border-radius: 10px;
   opacity: 0;
 }
@@ -128,5 +131,38 @@ body {
 @media (min-width: 1600px) {
   .container {
     max-width: 1540px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .Hero {
+    height: auto;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      'HeroImg HeroImg'
+      'HeroContext HeroContext';
+  }
+}
+
+@media (max-width: 991.98px) {
+  .Hero {
+    padding: 40px 0;
+    height: auto;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      'HeroImg HeroImg'
+      'HeroContext HeroContext';
+  }
+
+  .HeroImg img:nth-child(2) {
+    display: none;
+  }
+
+  .HeroImg {
+    padding: 0 20px;
+  }
+
+  .HeroContext {
+    text-align: center;
   }
 }
