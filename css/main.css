@@ -148,6 +148,10 @@ body {
     padding: 0 15px;
     text-align: left;
   }
+
+  .logo {
+    text-align: center;
+  }
 }
 
 @media (max-width: 991.98px) {
